@@ -10,7 +10,7 @@ socket.on('connect', function(){
     socket.emit('joinRoom',{
         name: name,
         room: room
-    })
+    });
 });
 
 socket.on('message', function(message){
@@ -20,11 +20,8 @@ socket.on('message', function(message){
     var timeStamp = moment.utc(message.timestamp);
     var $message = jQuery('.messages');
    
-   
-    
     $message.append('<p><strong>' + message.name + '  ' + timeStamp.local().format('h:mma ')+'</strong>' + '</p>');
-    $message.append('<p>' + message.text + '</p>');
-       
+    $message.append('<p>' + message.text + '</p>');      
 });
 
 //handles submitting of new message
@@ -34,9 +31,8 @@ $form.on('submit',function(event){
    event.preventDefault();
    var $message = $form.find("input[name='message']");
    
-   
    socket.emit('message',{
-       text: $message.val() ,
+       text: $message.val(),
        name: name
    });
   
