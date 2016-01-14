@@ -18,10 +18,10 @@ socket.on('message', function(message){
     console.log(message.text);
     
     var timeStamp = moment.utc(message.timestamp);
-    var $message = jQuery('.messages');
+    var $messages = jQuery('.messages');
    
-    $message.append('<p><strong>' + message.name + '  ' + timeStamp.local().format('h:mma ')+'</strong>' + '</p>');
-    $message.append('<p>' + message.text + '</p>');      
+    $messages.append('<li ><strong>' + message.name + '  ' + timeStamp.local().format('h:mma ')+'</strong>' + '</li>');
+    $messages.append('<li class="list-group-item">' + message.text + '</li>');      
 });
 
 //handles submitting of new message
