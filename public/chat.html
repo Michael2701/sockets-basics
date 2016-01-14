@@ -3,23 +3,22 @@
     <head> 
         <meta charset="UTF-8">
         <title>Socket.io Basics</title>
-        <style>
-            body{margin:0 auto; width:70%;font-size:16px;}
-            input[type=text]{font-size:18px;width:300px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            }
-        </style>
+        <link href="css/bootstrap.min.css" rel="stylesheet"> 
     </head>
-    <body>
+    <body class="container">
       <br><br>
       <a href="index.html" style="text-decoration:none;">Change details</a>
       <h2 class="room-name"></h2>
-      <div class="messages">
+      <div class="messages ">
           <!--Messages end up here--->
       </div>
       <form id="message-form">
-          <input type="text" name="message"/>
-          <input type="submit"/>
+          <div class="form-group">
+            <input type="text" name="message" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <input class="btn btn-primary" type="submit"/>
+          </div>
       </form>
      <script src="/js/moment.min.js"></script>  
      <script src="/js/jquery-2.2.0.js"></script>  
