@@ -20,7 +20,7 @@ socket.on('message', function(message){
     var timeStamp = moment.utc(message.timestamp);
     var $messages = jQuery('.messages');
    
-    $messages.append('<li ><strong>' + message.name + '  ' + timeStamp.local().format('h:mma ')+'</strong>' + '</li>');
+    $messages.append('<li style="line-height: 24px;"><strong>' + message.name + '  ' + timeStamp.local().format('h:mma ')+'</strong>' + '</li>');
     $messages.append('<li class="list-group-item">' + message.text + '</li>');      
 });
 
